@@ -15,7 +15,7 @@
     "support":{
         "email":"mail@netzmacht.de",
         "issues":"https://github.com/netzmacht/contao-workflow-notification/issues",
-        "source":"https://github.com/netzmacht/workflow"
+        "source":"https://github.com/netzmacht/contao-workflow-notification"
     },
     "require":{
         "php":"~5.4",
