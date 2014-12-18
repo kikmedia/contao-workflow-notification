@@ -84,12 +84,12 @@ class WorkflowSubscriber implements EventSubscriberInterface
     {
         $config = $event->getConfig();
 
-        if ($config->type === 'workflow_notification') {
+        if ($config['type'] === 'workflow_notification') {
             $action = new NotificationAction(
                 $this->getService('event-dispatcher'),
                 $this->getService('workflow.notification.queue'),
-                $config->notification_id,
-                $config->notification_language
+                $config['notification_id'],
+                $config['notification_language'] ?: null
             );
 
             $event->setAction($action);

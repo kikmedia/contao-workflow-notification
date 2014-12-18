@@ -58,7 +58,7 @@ class NotificationQueue
     public function send($clear = true)
     {
         $notificationIds = array_keys($this->notifications);
-        $collection      = NotificationCenter::findMultipleByIds($notificationIds);
+        $collection      = Notification::findMultipleByIds($notificationIds);
 
         if (!$collection) {
             return;

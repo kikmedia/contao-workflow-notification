@@ -11,6 +11,7 @@
 
 namespace Netzmacht\Contao\WorkflowNotification;
 
+use Netzmacht\Contao\WorkflowNotification\Event\PrepareNotificationTokensEvent;
 use Netzmacht\Workflow\Contao\Action\AbstractAction;
 use Netzmacht\Workflow\Flow\Context;
 use Netzmacht\Workflow\Flow\Item;
@@ -147,6 +148,8 @@ class NotificationAction extends AbstractAction
         $tokens['entity']  = $entity->getPropertiesAsArray();
         $tokens['context'] = $context->getProperties();
 
+        $tokens['entityId'] = (string) $item->getEntityId();
+
         $tokens['transition']          = $transition->getConfig();
         $tokens['transition']['name']  = $transition->getName();
         $tokens['transition']['label'] = $transition->getLabel();
@@ -155,6 +158,9 @@ class NotificationAction extends AbstractAction
         $tokens['step']['name']  = $step->getName();
         $tokens['step']['label'] = $step->getLabel();
 
-        return $tokens;
+        $event = new PrepareNotificationTokensEvent(new \ArrayObject($tokens), $transition, $item);
+        $this->eventDispatcher->dispatch($event::NAME, $event);
+
+        return $event->getTokens()->getArrayCopy();
     }
 }

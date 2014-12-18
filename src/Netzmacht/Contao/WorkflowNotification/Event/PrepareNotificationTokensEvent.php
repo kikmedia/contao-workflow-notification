@@ -11,8 +11,8 @@
 
 namespace Netzmacht\Contao\WorkflowNotification\Event;
 
-use Netzmacht\Workflow\Contao\Backend\Dca\Transition;
 use Netzmacht\Workflow\Flow\Item;
+use Netzmacht\Workflow\Flow\Transition;
 use Symfony\Component\EventDispatcher\Event;
 
 /**

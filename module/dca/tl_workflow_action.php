@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['TL_DCA']['tl_workflow_action']['metapalettes']['workflow_notification extends default'] = array(
-    'config' => array('notification_id', 'notification_language'),
+    'config' => array('notification_id', /* 'notification_language' */),
 );
 
 $GLOBALS['TL_DCA']['tl_workflow_action']['fields']['notification_id'] = array(
@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_workflow_action']['fields']['notification_id'] = array(
         'tl_class'       => 'w50',
         'mandatory'      => true,
         'submitOnChange' => true,
-        'includeBlankOtion' => true,
+        'includeBlankOption' => true,
     ),
     'sql'       => "int(10) NOT NULL default '0'",
 );
@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_workflow_action']['fields']['notification_language'] = ar
     'eval'      => array(
         'tl_class'       => 'w50',
         'submitOnChange' => true,
-        'includeBlankOtion' => true,
+        'includeBlankOption' => true,
     ),
     'sql'       => "char(5) NOT NULL default ''",
 );
