@@ -60,13 +60,11 @@ class NotificationQueue
         $notificationIds = array_keys($this->notifications);
         $collection      = Notification::findMultipleByIds($notificationIds);
 
-        if (!$collection) {
-            return;
-        }
-
-        foreach ($collection as $notification) {
-            $message = $this->notifications[$collection->id];
-            $notification->current()->send($message['data'], $message['language']);
+        if ($collection) {
+            foreach ($collection as $notification) {
+                $message = $this->notifications[$collection->id];
+                $notification->current()->send($message['data'], $message['language']);
+            }
         }
 
         if ($clear) {
