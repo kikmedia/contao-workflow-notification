@@ -11,6 +11,7 @@
 
 namespace Netzmacht\Contao\WorkflowNotification\Dca;
 
+use Netzmacht\Contao\DevTools\Dca\Options\OptionsBuilder;
 use NotificationCenter\Model\Notification;
 
 /**
@@ -27,20 +28,10 @@ class Action
      */
     public function getNotificationIds()
     {
-        $notifications = array();
-        $collection    = Notification::findBy(array('type LIKE ?'), 'workflow_%');
+        $collection = Notification::findBy(array('type LIKE ?'), 'workflow_%');
 
-        if ($collection) {
-            foreach ($collection as $notification) {
-                $notifications[$notification->type][$notification->id] = $notification->title;
-            }
-        }
-
-        return $notifications;
-    }
-
-    public function getNotificationLanguages()
-    {
-
+        return OptionsBuilder::fromCollection($collection, 'id', 'title')
+            ->groupBy('type')
+            ->getOptions();
     }
 }
