@@ -11,7 +11,7 @@
 
 namespace Netzmacht\Contao\WorkflowNotification\Dca;
 
-use Netzmacht\Contao\DevTools\Dca\Options\OptionsBuilder;
+use Netzmacht\Contao\Toolkit\Dca\Options\OptionsBuilder;
 use NotificationCenter\Model\Notification;
 
 /**
