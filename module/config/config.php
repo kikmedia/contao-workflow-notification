@@ -23,7 +23,6 @@ $GLOBALS['TL_HOOKS']['initializeDependencyContainer'][] = function(\Pimple $cont
 
 $GLOBALS['NOTIFICATION_CENTER']['NOTIFICATION_TYPE']['workflow'] = array
 (
-    // Type
     'workflow_notification' => array
     (
         'recipients'    => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'user_email'),
