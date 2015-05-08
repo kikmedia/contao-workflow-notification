@@ -26,10 +26,10 @@ $GLOBALS['NOTIFICATION_CENTER']['NOTIFICATION_TYPE']['workflow'] = array
     // Type
     'workflow_notification' => array
     (
-        'recipients'   => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'user_email'),
+        'recipients'    => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'user_email'),
         'email_subject' => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
-        'email_text'   => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
-        'email_html'   => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
-        'file_content' => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
+        'email_text'    => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
+        'email_html'    => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
+        'file_content'  => array('entity_*', 'properties_*', 'step_*', 'transition_*', 'date', 'entityId', 'user_*'),
     )
 );
